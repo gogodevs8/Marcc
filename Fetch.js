@@ -24,9 +24,19 @@ db.collection('Furniture').where('Category', '==', categoryName).where('SubCateg
         count++;
         cnt.innerText=count;
         addToList(doc.data());
+        addToArray(doc.data().ProductCode);
         Display(doc.data());
-    });
-}).catch(err => {
+    })
+}).then(()=>{
+    console.log(NameArray);
+    NameArray.forEach((data)=>{
+        let Image = document.querySelector(`.${data}`);
+        console.log(Image);
+        Image.classList.add('animate__animated');
+        Image.classList.add('animate__fadeInUp');
+    })
+})
+.catch(err => {
     console.log(err);
 });
 
@@ -44,7 +54,7 @@ const Display = (details) => {
                             <div class="product-image">
                                 <figure class="product-image--holder">
                                     <a href=${details.url} data-lightbox="collection">
-                                        <img src=${details.url} alt=${details.name} class="img-fluid fireImage">
+                                        <img src=${details.url} alt=${details.ProductName} class="img-fluid fireImage ${details.ProductCode}">
                                     </a>
                                 </figure>
                                 <a href=${details.url} data-lightbox="collection2"></a>
@@ -71,6 +81,10 @@ const Display = (details) => {
     ImageRow.innerHTML += html;
 }
 
+let NameArray=[];
+function addToArray(Code){
+    NameArray.push(Code);
+}
 
 function addToList(data){
     console.log(data);
