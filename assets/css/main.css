@@ -122,8 +122,6 @@ body {
   overflow-x: hidden;
   overflow-y: auto; }
 
- 
-
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 700;
   font-family: "Roboto", sans-serif;
@@ -925,7 +923,7 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
   font-size: 36px;
   line-height: 1.2; }
   .page-title-area:after {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.2);
     z-index: 1; }
   .page-title-area-2 {
     height: 60rem; }
