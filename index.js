@@ -89,7 +89,7 @@ function addToList(data){
     // aTag.href=data.Product + data.tag + ".html";
     LIST.innerHTML += `
     <li>
-        <a href=${data.Product+data.tag+'.html'} >
+        <a href=${data.tag+data.Product+'.html'} >
             <span class="category-title">${ListItem}</span>
             <i class="fa fa-angle-double-right"></i>
         </a>
