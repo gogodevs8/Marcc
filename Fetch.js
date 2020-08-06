@@ -62,7 +62,7 @@ const Display = (details) => {
                                     <a data-toggle="modal" href=${details.url} data-target="#productModal" data-lightbox="collection3" class="action-btn">
                                         <i class="la la-eye"></i>
                                     </a>
-                                    <a href="contact.html" class="action-btn">
+                                    <a href="contact-us.html" class="action-btn">
                                         <i class="la la-repeat"></i>
                                     </a>
                                  </div>
