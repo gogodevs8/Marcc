@@ -39,7 +39,7 @@ const Display = (details) => {
                             </figure>
                             <a href=${details.tag+details.Product}.html class="product-overlay"></a>
                         </div>
-                        <div class="product-info" style="text-align: center; padding:8px; border:1px solid black; background-color:rgba(0,0,0,0.2); color:white ; border-radius:20px;  padding-bottom:2px">
+                        <div class="product-info" style="text-align: center; padding:8px; padding-bottom:2px">
                             <h3 class="product-title" style="color:rgba(1,1,1,1);"><a href=${details.tag+details.Product}.html>${details.Product}</a></h3>
                         </div>
                     </div>
@@ -89,7 +89,7 @@ function addToList(data){
     // aTag.href=data.Product + data.tag + ".html";
     LIST.innerHTML += `
     <li>
-        <a href=${data.Product+data.tag+'.html'} >
+        <a href=${data.tag+data.Product+'.html'} >
             <span class="category-title">${ListItem}</span>
             <i class="fa fa-angle-double-right"></i>
         </a>
