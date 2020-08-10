@@ -91,7 +91,8 @@ function addToList(data){
     //let ListItem= data.Product;
 
     Tag1.innerText= data.Category+' Furniture';
-    Tag2.innerText= data.Category+' Furniture';
+    //Tag2.innerText= data.Category+' Furniture';
+    Tag2.innerHTML=`<a href= "${data.Category}.html" style="color:black;" >${data.Category} Furniture</a>`;
     Tag3.innerText= data.SubCategory;
     
 
