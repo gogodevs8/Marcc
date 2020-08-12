@@ -1,19 +1,13 @@
 //For Main Categories page
 const db = firebase.firestore();
-
 const ImageRow = document.querySelector('.Categories-Fetch');
-
 var category= document.querySelector('.firebase');
-
 var cnt= document.querySelector('.count');
-
 var Tag1= document.querySelector('.TAG1');
-
 var Tag2= document.querySelector('.TAG2');
-
-
 var categoryName=category.innerText;
 let count=0;
+
 db.collection('SubCategories').where('tag', '==', categoryName).orderBy('Product').get().then(snapshot => {
     snapshot.docs.forEach((doc) => {
         count++;
@@ -22,7 +16,11 @@ db.collection('SubCategories').where('tag', '==', categoryName).orderBy('Product
         addToList(doc.data());
         Display(doc.data());
     });
-}).catch(err => {
+})
+.then(()=>{
+    setInterval(()=>{AOS.init({duration: 1000});},3000)
+})
+.catch(err => {
     console.log(err);
 });
 
@@ -30,9 +28,9 @@ const Display = (details) => {
     let dataTitle = details.name;
         console.log(details)
             let html = `
-            <div class="col-xl-4 col-sm-6 mb--50">
+            <div class="col-xl-4 col-sm-6 mb--50" data-aos="zoom-in" data-aos-duration="3000">
                 <div class="ft-product">
-                    <div class="product-inner">
+                    <div class="product-inner" data-aos="fade-up" data-aos-duration="3000">
                         <div class="product-image">
                             <figure class="product-image--holder">
                                     <img src=${details.image} alt=${details.Product} >
@@ -45,22 +43,17 @@ const Display = (details) => {
                     </div>
                 </div>
             </div>
-        `;
-      
+        `;      
     //addImages(details.name);
-    ImageRow.innerHTML += html;
-    
-
+    ImageRow.innerHTML += html;    
     //add the class after 2-3 seconds
-    setTimeout(()=>{
-        timedFunction();
-    },1000);  
+    // setTimeout(()=>{
+    //     timedFunction();
+    // },1000);  
 }
 
 let timedFunction=()=>{
-    //animate__animated animate__fadeInDown
     var ImageR = document.querySelector('.animatedImg');
-
     ImageR.classList.add('animate__animated');
     ImageR.classList.add('animate__fadeInDown');
 
@@ -79,14 +72,7 @@ function addToList(data){
 
     Tag1.innerText=data.tag+' Furniture';
     Tag2.innerText=data.tag+' Furniture';
-    
-
     let LIST= document.createElement('li');
-    // LIST.textContent=ListItem;
-    // LIST.classList.add('option');
-
-    // let aTag= document.createElement('a');
-    // aTag.href=data.Product + data.tag + ".html";
     LIST.innerHTML += `
     <li>
         <a href=${data.tag+data.Product+'.html'} >
@@ -96,13 +82,6 @@ function addToList(data){
     </li>`;
 
     list.appendChild(LIST);
-    
-    // let Option= document.createElement('option');
-    // Option.textContent= ListItem;
-    // Option.value= url;
-
-    // options.appendChild(Option);
-    // console.log(Option);
 }
 
 

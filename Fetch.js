@@ -24,37 +24,26 @@ db.collection('Furniture').where('Category', '==', categoryName).where('SubCateg
         count++;
         cnt.innerText=count;
         addToList(doc.data());
-        addToArray(doc.data().ProductCode);
+        //addToArray(doc.data().ProductCode);
         Display(doc.data());
     })
 }).then(()=>{
-    console.log(NameArray);
-    NameArray.forEach((data)=>{
-        let Image = document.querySelector(`.${data}`);
-        console.log(Image);
-        Image.classList.add('animate__animated');
-        Image.classList.add('animate__fadeInUp');
-    })
+    setInterval(()=>{AOS.init({duration: 1200});},3000)  //add Animate On Scroll here
 })
 .catch(err => {
     console.log(err);
 });
 
-//lighthouse- lokesh
-// <a href="assets/images/image1.jpg" data-lightbox="image-1" data-title="My caption"><img src="assets/thumbnails/thumb1.jpg" alt="Surfing"/>
-// </a>
-
-//<div>Name: ${location.name || location.FORMATTED} </div>
 const Display = (details) => {
     console.log(details)
     let html = `
-                <div class="col-xl-3 col-lg-4 col-sm-6 mb--50">
+                <div class="col-xl-3 col-lg-4 col-sm-6 mb--50" data-aos="fade-up" data-aos-duration="3000">
                     <div class="ft-product">
-                        <div class="product-inner">
+                        <div class="product-inner" data-aos="fade-up" data-aos-duration="3000" >
                             <div class="product-image">
                                 <figure class="product-image--holder">
                                     <a href=${details.url} data-lightbox="collection">
-                                        <img src=${details.url} alt=${details.ProductName} class="img-fluid fireImage ${details.ProductCode}">
+                                        <img src=${details.url} alt=${details.ProductName}  class="img-fluid fireImage" >
                                     </a>
                                 </figure>
                                 <a href=${details.url} data-lightbox="collection2"></a>
@@ -77,46 +66,14 @@ const Display = (details) => {
                     </div>
                 </div>
             `;
-    //addImages(details.name);
     ImageRow.innerHTML += html;
-}
-
-let NameArray=[];
-function addToArray(Code){
-    NameArray.push(Code);
 }
 
 function addToList(data){
     console.log(data);
-    //let ListItem= data.Product;
-
+    var catName = data.Category;
+    catName= catName.toLowerCase();
     Tag1.innerText= data.Category+' Furniture';
-    //Tag2.innerText= data.Category+' Furniture';
-    Tag2.innerHTML=`<a href= "${data.Category}.html" style="color:black;" >${data.Category} Furniture</a>`;
+    Tag2.innerHTML=`<a href= "${catName}.html" style="color:black;" >${data.Category} Furniture</a>`;
     Tag3.innerText= data.SubCategory;
-    
-
-    //let LIST= document.createElement('li');
-    // LIST.textContent=ListItem;
-    // LIST.classList.add('option');
-
-    // let aTag= document.createElement('a');
-    // aTag.href=data.Product + data.tag + ".html";
-    /*LIST.innerHTML += `
-    <li>
-        <a href=${data.Product+data.tag+'.html'} >
-            <span class="category-title">${ListItem}</span>
-            <i class="fa fa-angle-double-right"></i>
-        </a>
-    </li>`;
-
-    list.appendChild(LIST);
-    
-    // let Option= document.createElement('option');
-    // Option.textContent= ListItem;
-    // Option.value= url;
-
-    // options.appendChild(Option);
-    // console.log(Option);
-*/
 }
