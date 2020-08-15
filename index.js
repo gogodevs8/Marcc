@@ -8,7 +8,7 @@ var Tag2= document.querySelector('.TAG2');
 var categoryName=category.innerText;
 let count=0;
 
-db.collection('SubCategories').where('tag', '==', categoryName).orderBy('Product').get().then(snapshot => {
+db.collection('SubCategories').where('tag', '==', categoryName).orderBy('order').get().then(snapshot => {
     snapshot.docs.forEach((doc) => {
         count++;
         cnt.innerText=count;
