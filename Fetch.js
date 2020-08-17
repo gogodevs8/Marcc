@@ -28,7 +28,7 @@ db.collection('Furniture').where('Category', '==', categoryName).where('SubCateg
         Display(doc.data());
     })
 }).then(()=>{
-    setInterval(()=>{AOS.init({duration: 1200});},3000)  //add Animate On Scroll here
+    setInterval(()=>{AOS.init({duration: 1200});},1500)  //add Animate On Scroll here
 })
 .catch(err => {
     console.log(err);
@@ -37,9 +37,9 @@ db.collection('Furniture').where('Category', '==', categoryName).where('SubCateg
 const Display = (details) => {
     console.log(details)
     let html = `
-                <div class="col-xl-3 col-lg-4 col-sm-6 mb--50" data-aos="fade-up" data-aos-duration="3000">
+                <div class="col-xl-3 col-lg-4 col-sm-6 mb--50" data-aos="fade-up">
                     <div class="ft-product">
-                        <div class="product-inner" data-aos="fade-up" data-aos-duration="3000" >
+                        <div class="product-inner" data-aos="fade-up">
                             <div class="product-image">
                                 <figure class="product-image--holder">
                                     <a href=${details.url} data-lightbox="collection">
