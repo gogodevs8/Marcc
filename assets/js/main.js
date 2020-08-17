@@ -256,7 +256,7 @@
 	state.stickyHeader = function(){
 		$(window).on('scroll', function(){
 		    if ($(window).scrollTop() >= $headerTotalHeight) {
-		        $('.fixed-header').addClass('sticky-header');
+		        
 		    } else {
 		        $('.fixed-header').removeClass('sticky-header');
 		    }
