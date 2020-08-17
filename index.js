@@ -18,7 +18,7 @@ db.collection('SubCategories').where('tag', '==', categoryName).orderBy('order')
     });
 })
 .then(()=>{
-    setInterval(()=>{AOS.init({duration: 1000});},3000)
+    setInterval(()=>{AOS.init({duration: 1000});},1500)
 })
 .catch(err => {
     console.log(err);
@@ -28,9 +28,9 @@ const Display = (details) => {
     let dataTitle = details.name;
         console.log(details)
             let html = `
-            <div class="col-xl-4 col-sm-6 mb--50" data-aos="zoom-in" data-aos-duration="3000">
+            <div class="col-xl-4 col-sm-6 mb--50" data-aos="zoom-in">
                 <div class="ft-product">
-                    <div class="product-inner" data-aos="fade-up" data-aos-duration="3000">
+                    <div class="product-inner" data-aos="fade-up">
                         <div class="product-image">
                             <figure class="product-image--holder">
                                     <img src=${details.image} alt=${details.Product} >
