@@ -117,10 +117,11 @@ body {
   font-family: "Roboto", sans-serif;
   color: #373737;
   line-height: 1.625;
-  background-color: #fff;
+  background-color: #fff; 
   font-weight: 400;
   overflow-x: hidden;
-  overflow-y: auto; }
+  overflow-y: auto;
+}
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 700;
@@ -1302,25 +1303,7 @@ a, button, .item-overlay, .global-overlay, .pagination li .page-number, .scroll-
 
 /*-- 10.01 - Sticky Header --*/
 .sticky-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  margin: 0;
-  background-color: #ffffff;
-  -webkit-animation: fadeInDown 0.8s ease-in-out;
-  -moz-animation: fadeInDown 0.8s ease-in-out;
-  -ms-animation: fadeInDown 0.8s ease-in-out;
-  -o-animation: fadeInDown 0.8s ease-in-out;
-  animation: fadeInDown 0.8s ease-in-out;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
-  -ms-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
-  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.14); }
-  .sticky-header .header__top {
-    display: none; }
+}
 
 /*-- 10.02 - Header Site Info --*/
 .site-info {
