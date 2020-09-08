@@ -371,3 +371,9 @@
   background-color: black;
 }
 /* ------testimonial  close-------*/
+.carousel-control.left{
+  background-image: none !important;
+}
+.carousel-control.right{
+  background-image: none !important;
+}
