@@ -110,21 +110,6 @@
   --animate-delay: 14s;
 }
 
-@media screen and (max-width: 1000px) {
-  .hideMobile {
-    display: none;
-  }
-  .top-right {
-    position: absolute;
-    top: 16px;
-    right: 26px;
-  }
-
-  .top-right h4 {
-    color: #e33;
-    font-size: 10px;
-  }
-}
 
 .top-right {
   position: absolute;
@@ -376,4 +361,41 @@
 }
 .carousel-control.right{
   background-image: none !important;
+}
+
+.gll{
+  color: black !important;
+   margin-left: -100px !important;
+}
+.glr{
+  color: black !important;
+   margin-right: -100px !important;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .hideMobile {
+    display: none;
+  }
+  .top-right {
+    position: absolute;
+    top: 16px;
+    right: 26px;
+  }
+
+  .top-right h4 {
+    color: #e33;
+    font-size: 10px;
+  }
+
+  
+  .gll{
+    color: black !important;
+    margin-left: 0px !important;
+  }
+  .glr{
+    color: black !important;
+    margin-right: 0px !important;
+  }
+
 }
