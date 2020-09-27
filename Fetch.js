@@ -19,7 +19,7 @@ var Tag2= document.querySelector('.TAG2');
 var Tag3= document.querySelector('.TAG3');
 
 let count=0;
-db.collection('Furniture').where('Category', '==', categoryName).where('SubCategory', '==',SubCategoryName).orderBy('ProductCode').get().then(snapshot => {
+db.collection('Furniture').where('Category', '==', categoryName).where('SubCategory', '==',SubCategoryName).orderBy('ProductCode',"asc").get().then(snapshot => {
     snapshot.docs.forEach((doc) => {
         count++;
         cnt.innerText=count;
