@@ -12,13 +12,12 @@ db.collection('SubCategories').where('tag', '==', categoryName).orderBy('order')
     snapshot.docs.forEach((doc) => {
         count++;
         cnt.innerText=count;
-        console.log(count);
         addToList(doc.data());
         Display(doc.data());
     });
 })
 .then(()=>{
-    setInterval(()=>{AOS.init({duration: 1000});},1500)
+    setInterval(()=>{AOS.init({duration: 1000});},1450)
 })
 .catch(err => {
     console.log(err);
